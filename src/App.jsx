@@ -7,6 +7,7 @@ import { ReactQueryDevtools } from '@tanstack/react-query-devtools'
 import Products from './Paginated'
 import Parallel from './Parallel'
 import Optimistic from './Optimistic'
+import Dependant from './Dependant'
 
   export const queryClient = new QueryClient({
     defaultOptions: {
@@ -30,6 +31,7 @@ const App = () => {
           <Route path='/products' element={<Products />} />
           <Route path='/parallel' element={<Parallel/>}/>
           <Route path='/optimistic' element={<Optimistic/>}/>
+          <Route path='/dependent' element={<Dependant/>}/>
         </Routes>
       </BrowserRouter>
     </QueryClientProvider>

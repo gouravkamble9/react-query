@@ -6,17 +6,19 @@ import { QueryClient, QueryClientProvider } from '@tanstack/react-query'
 import { ReactQueryDevtools } from '@tanstack/react-query-devtools'
 import Products from './Paginated'
 import Parallel from './Parallel'
+import Optimistic from './Optimistic'
 
-
-const App = () => {
-
-  const queryClient = new QueryClient({
+  export const queryClient = new QueryClient({
     defaultOptions: {
       queries: {
         staleTime: 10000
       }
     }
   })
+
+
+const App = () => {
+
   return (
     <QueryClientProvider client={queryClient}>
       <ReactQueryDevtools initialIsOpen={false} />
@@ -27,6 +29,7 @@ const App = () => {
           <Route path='/products/:id' element={<Product />} />
           <Route path='/products' element={<Products />} />
           <Route path='/parallel' element={<Parallel/>}/>
+          <Route path='/optimistic' element={<Optimistic/>}/>
         </Routes>
       </BrowserRouter>
     </QueryClientProvider>

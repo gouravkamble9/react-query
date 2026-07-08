@@ -26,7 +26,7 @@ const Dependant = () => {
 
     return (
         <div className="p-12">
-            <h1 className="text-lg font-bold">Post :</h1>
+            <h1 className="text-lg font-bold">Post:</h1>
             {isLoading ? <p>Loading the post</p> : <h2>{post?.title}</h2>}
             <br />
             <h1 className="text-lg font-bold">Comments</h1>
